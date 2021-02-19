@@ -1,10 +1,10 @@
 LIBPNG_VERSION ?= 1.6.37
-LIBJPG_VERSION ?= 9c
-OPENJP2_VERSION ?= 2.3.1
-LIBTIFF_VERSION ?= 4.0.9
-BZIP2_VERSION ?= 1.0.6
-LIBWEBP_VERSION ?= 0.6.1
-IMAGEMAGICK_VERSION ?= 7.0.8-45
+LIBJPG_VERSION ?= 9d
+OPENJP2_VERSION ?= 2.4.0
+LIBTIFF_VERSION ?= 4.2.0
+BZIP2_VERSION ?= 1.0.8
+LIBWEBP_VERSION ?= 1.2.0
+IMAGEMAGICK_VERSION ?= 7.0.10-62
 
 TARGET_DIR ?= /opt/
 PROJECT_ROOT = $(dir $(abspath $(lastword $(MAKEFILE_LIST))))
@@ -55,7 +55,7 @@ $(CACHE_DIR)/lib/libpng.a: $(LIBPNG_SOURCE)
 BZIP2_SOURCE=bzip2-$(BZIP2_VERSION).tar.gz
 
 $(BZIP2_SOURCE):
-	curl -LO http://prdownloads.sourceforge.net/bzip2/bzip2-$(BZIP2_VERSION).tar.gz
+	curl -LO https://sourceware.org/pub/bzip2/bzip2-$(BZIP2_VERSION).tar.gz
 
 $(CACHE_DIR)/lib/libbz2.a: $(BZIP2_SOURCE)
 	tar xf $<
